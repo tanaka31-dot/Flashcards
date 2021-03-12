@@ -31,8 +31,6 @@ Same as Lab 1 above but with the additional features for user to create their ow
 
 <img src="http://g.recordit.co/ew7OCeNrRI.gif" width=200><br>
 
-`TODO://` In the User stories section below, add an `x` between the `-[ ]` like this `- [x]` for any user story you complete. (☝️ Remove this paragraph after after checking off user stories)
-
 ## Required
 - [x] User can open the creation screen
 - [x] User can cancel out of the creation screen
