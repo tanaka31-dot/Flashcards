@@ -102,7 +102,9 @@ class ViewController: UIViewController {
         creationController.flashcardsController = self
         if segue.identifier == "EditSegue" {
             creationController.initialQuestion = questionLabel.text
-            creationController.initialAnswer = answerLabel.text        }
+            creationController.initialAnswer = answerLabel.text
+            
+        }
         
     }
 }
