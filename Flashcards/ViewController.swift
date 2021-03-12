@@ -51,13 +51,13 @@ class ViewController: UIViewController {
         correct.layer.shadowOpacity = 0.2
         
         wrongOne.layer.borderWidth = 3.0
-        wrongOne.layer.borderColor = #colorLiteral(red: 0.4868359123, green: 0.09521647471, blue: 0.1465865298, alpha: 1)
+        wrongOne.layer.borderColor = #colorLiteral(red: 0.4633161628, green: 1, blue: 0.9333231424, alpha: 1)
         
         wrongTwo.layer.borderWidth = 3.0
-        wrongTwo.layer.borderColor = #colorLiteral(red: 0.4868359123, green: 0.09521647471, blue: 0.1465865298, alpha: 1)
+        wrongTwo.layer.borderColor = #colorLiteral(red: 0.4633161628, green: 1, blue: 0.9333231424, alpha: 1)
         
         correct.layer.borderWidth = 3.0
-        correct.layer.borderColor = #colorLiteral(red: 0.4868359123, green: 0.09521647471, blue: 0.1465865298, alpha: 1)
+        correct.layer.borderColor = #colorLiteral(red: 0.4633161628, green: 1, blue: 0.9333231424, alpha: 1)
         
     }
     
@@ -81,6 +81,28 @@ class ViewController: UIViewController {
     
     @IBAction func didTapWrongTwo(_ sender: Any) {
         questionLabel.isHidden = false
+        
+    }
+    func updateFlashcard(question: String, answer: String, extraAnswerOne : String, extraAnswerTwo : String){
+        
+        questionLabel.text = question
+        answerLabel.text = answer
+        
+        wrongOne.setTitle(extraAnswerOne, for: .normal)
+        correct.setTitle(answer, for: .normal)
+        wrongTwo.setTitle(extraAnswerTwo, for: .normal)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navigationController = segue.destination as! UINavigationController
+        
+        let creationController = navigationController.topViewController as! CreationViewController
+            
+        creationController.flashcardsController = self
+        if segue.identifier == "EditSegue" {
+            creationController.initialQuestion = questionLabel.text
+            creationController.initialAnswer = answerLabel.text        }
         
     }
 }
