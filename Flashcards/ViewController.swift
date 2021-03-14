@@ -256,15 +256,17 @@ class ViewController: UIViewController {
     
     func deleteCurrentFlashcard(){
         //delete current flashcard
+        if flashcards.count != 0 {
         flashcards.remove(at: currentIndex)
         
         if currentIndex > flashcards.count - 1 {
             currentIndex = flashcards.count - 1
         }
-                
-        updateNextPrevButtons()
-        updateLabels()
-        saveAllFlashcardsToDisk()
+            updateNextPrevButtons()
+            updateLabels()
+            saveAllFlashcardsToDisk()
+            
+        }
     }
 }
 
