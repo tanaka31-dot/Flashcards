@@ -240,6 +240,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         
+        if flashcards.count != 0 {
         let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure?", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -250,8 +251,14 @@ class ViewController: UIViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancelAction)
         
-        present(alert, animated: true)
-        
+            present(alert, animated: true)
+            
+        }
+        else {
+            let alert = UIAlertController(title: "Error", message: "No more flashcards to delete", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(alert, animated: true)
+        }
     }
     
     func deleteCurrentFlashcard(){
@@ -265,7 +272,6 @@ class ViewController: UIViewController {
             updateNextPrevButtons()
             updateLabels()
             saveAllFlashcardsToDisk()
-            
         }
     }
 }
