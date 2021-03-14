@@ -41,3 +41,26 @@ Same as Lab 1 above but with the additional features for user to create their ow
 - [x] User gets an error if they try to create a new flashcard with no question or answer
 - [x] User can edit existing flashcard
 - [x] User can add multiple choice answers in the creation screen
+
+
+## Lab 3
+
+### App Description
+Same as lab 2 but with added features to allow user to save flashcards and access prevously made flashcards when they re-open the app and also browse multiple 
+
+### App Walk-though
+
+<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="YOUR_GIF_URL_HERE" width=200><br>
+
+## Required
+- [x] User can browse through multiple flashcards
+- [x] User can re-open the app and see previously created flashcards
+- [x] Push code to GitHub
+
+## Optional
+- [x] User can delete a flashcard
+- [x] User can edit existing flashcard
+- [x] User can store multiple choice questions
+- [x] User gets error message when they try to delete an flashcards and they have none left.

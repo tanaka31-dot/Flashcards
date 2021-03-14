@@ -263,7 +263,7 @@ class ViewController: UIViewController {
     
     func deleteCurrentFlashcard(){
         //delete current flashcard
-        if flashcards.count != 0 {
+        if flashcards.count > 0 {
         flashcards.remove(at: currentIndex)
         
         if currentIndex > flashcards.count - 1 {
