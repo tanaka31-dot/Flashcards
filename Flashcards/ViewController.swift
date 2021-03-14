@@ -240,7 +240,7 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnDelete(_ sender: Any) {
         
-        if flashcards.count != 0 {
+        if flashcards.count > 0 {
         let alert = UIAlertController(title: "Delete flashcard", message: "Are you sure?", preferredStyle: .actionSheet)
         
         let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (action) in
@@ -272,6 +272,8 @@ class ViewController: UIViewController {
             updateNextPrevButtons()
             updateLabels()
             saveAllFlashcardsToDisk()
+            print("We now have \(flashcards.count) flashcards")
+            print("Our current index is \(currentIndex)")
         }
     }
 }
