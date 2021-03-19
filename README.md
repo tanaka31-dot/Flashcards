@@ -29,8 +29,8 @@ Same as Lab 1 above but with the additional features for user to create their ow
 
 ### App Walk-though
 
-<img src="http://g.recordit.co/Io0AkMtokS.gif" width=200><br>
-<img src="http://g.recordit.co/SEeFYhtIjv.gif" width=200><br>
+<img src="http://g.recordit.co/1JESdqsrQi.gif" width=200><br>
+<img src="http://g.recordit.co/TgdfKSfK0K.gif" width=200><br>
  
 ## Required
 - [x] User can open the creation screen
