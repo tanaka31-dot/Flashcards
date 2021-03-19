@@ -136,6 +136,9 @@ class ViewController: UIViewController {
         if isExisting{
             //replace existing flashcard
             flashcards[currentIndex] = flashcard
+            print("Edited existing flashcard")
+            print("We now have \(flashcards.count) flashcards😎")
+            
         } else {
         //adding flashcards to the flashcards array
         flashcards.append(flashcard)
@@ -174,6 +177,7 @@ class ViewController: UIViewController {
     
     func updateLabels() {
         //get current flashcard
+        //If no flashcards left display empty
         if flashcards.count == 0 {
             questionLabel.text = nil
             answerLabel.text = nil
@@ -191,7 +195,6 @@ class ViewController: UIViewController {
             correct.setTitle(currentFlashcard.answer, for: .normal)
             wrongTwo.setTitle(currentFlashcard.wrongTwo, for: .normal)
         }
-        
     }
     
     @IBAction func didTapOnNext(_ sender: Any) {

@@ -50,9 +50,11 @@ Same as lab 2 but with added features to allow user to save flashcards and acces
 
 ### App Walk-though
 
-<img src="YOUR_GIF_URL_HERE" width=200><br>
-<img src="YOUR_GIF_URL_HERE" width=200><br>
-<img src="YOUR_GIF_URL_HERE" width=200><br>
+<img src="http://g.recordit.co/U44uN0ozxO.gif" width=200><br>
+<img src="http://g.recordit.co/IHtfe5YKPR.gif" width=200><br>
+<img src="http://g.recordit.co/k6CYl1lZsF.gif" width=200><br>
+<img src="http://g.recordit.co/ho640I7ikv.gif" width=200><br>
+<img src="http://g.recordit.co/Z3pXH46ja3.gif" width=200><br>
 
 ## Required
 - [x] User can browse through multiple flashcards
@@ -63,4 +65,4 @@ Same as lab 2 but with added features to allow user to save flashcards and acces
 - [x] User can delete a flashcard
 - [x] User can edit existing flashcard
 - [x] User can store multiple choice questions
-- [x] User gets error message when they try to delete an flashcards and they have none left.
+- [x] User gets error message when they try to delete flashcards and they have none left.
