@@ -83,13 +83,12 @@
                                     <action selector="didTapCorrect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Qu-Ya-YZH"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-S2-Wcn">
-                                <rect key="frame" x="173" y="788" width="68" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-S2-Wcn">
+                                <rect key="frame" x="175" y="784" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="58"/>
-                                <state key="normal" title="+"/>
+                                <state key="normal" image="addButton"/>
                                 <connections>
-                                    <segue destination="rU2-Mk-wpV" kind="presentation" id="oMu-Dc-37B"/>
+                                    <segue destination="rU2-Mk-wpV" kind="presentation" identifier="creationSegue" id="oMu-Dc-37B"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B6D-lz-Rbd">
@@ -105,20 +104,20 @@
                                     <action selector="didTapWrongOne:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tui-Yx-epY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKh-Xg-jed">
-                                <rect key="frame" x="59" y="800" width="73" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BKh-Xg-jed">
+                                <rect key="frame" x="64" y="790" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Prev"/>
+                                <state key="normal" image="arrowLeft"/>
+                                <state key="disabled" image="arrowLeftDisabled"/>
                                 <connections>
                                     <action selector="didTapOnPrev:" destination="BYZ-38-t0r" eventType="touchUpInside" id="6ny-VV-q7g"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-U1-Sui">
-                                <rect key="frame" x="282" y="787" width="99" height="68"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u0j-U1-Sui">
+                                <rect key="frame" x="300" y="789" width="64" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Next"/>
+                                <state key="normal" image="arrowRight"/>
+                                <state key="disabled" image="arrowRightDisabled"/>
                                 <connections>
                                     <action selector="didTapOnNext:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Mae-mm-o49"/>
                                 </connections>
@@ -230,6 +229,11 @@
         <segue reference="oMu-Dc-37B"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="addButton" width="64" height="64"/>
+        <image name="arrowLeft" width="64" height="64"/>
+        <image name="arrowLeftDisabled" width="64" height="64"/>
+        <image name="arrowRight" width="64" height="64"/>
+        <image name="arrowRightDisabled" width="64" height="64"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

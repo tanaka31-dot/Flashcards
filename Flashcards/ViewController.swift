@@ -78,8 +78,12 @@ class ViewController: UIViewController {
         
         readSavedFlashcards()
         
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if flashcards.count == 0 {
-            updateFlashcard(question: "What are the properties of rational preferences in microeconomics", answer: "Completeness, Transitivity, and Monotonicity", extraAnswerOne: "Randomness, Transitivity, and Monotonicity", extraAnswerTwo: "Completeness, Transitivity, and Strict Monotonicity", isExisting: false)
+            performSegue(withIdentifier: "creationSegue", sender: self)
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -101,11 +105,44 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
-        if questionLabel.isHidden==false {
-            questionLabel.isHidden = true
-        } else {
-            questionLabel.isHidden = false
-        }
+        flipFlashcard()
+            }
+    
+    func flipFlashcard(){
+        
+        UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
+            if self.questionLabel.isHidden==false {
+                self.questionLabel.isHidden = true
+            } else {
+                self.questionLabel.isHidden = false
+            }
+        })
+    }
+    
+    func animateCardOut() {
+        UIView.animate(withDuration: 0.1, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
+                        self.updateLabels()
+                        self.animateCardIn()})
+    }
+    
+    func animateCardIn() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
+        
+        UIView.animate(withDuration: 0.2) {self.card.transform = CGAffineTransform.identity}
+        
+    }
+    
+    func animateCardPrev() {
+        UIView.animate(withDuration: 0.1, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: {finished in
+                        self.updateLabels()
+                        self.animateCardInPrev()})
+    }
+    
+    func animateCardInPrev() {
+        card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
+        
+        UIView.animate(withDuration: 0.2) {self.card.transform = CGAffineTransform.identity}
+        
     }
     
     @IBAction func didTapWrongOne(_ sender: Any) {
@@ -199,11 +236,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnNext(_ sender: Any) {
         //increase current index
-        
+        animateCardOut()
         currentIndex = currentIndex + 1
         
-        // update labels
-        updateLabels()
         
         // update buttons
         updateNextPrevButtons()
@@ -211,11 +246,9 @@ class ViewController: UIViewController {
     
     @IBAction func didTapOnPrev(_ sender: Any) {
         //decrease current index
-        
+        animateCardPrev()
         currentIndex = currentIndex - 1
         
-        //update labels
-        updateLabels()
         
         //update buttons
         updateNextPrevButtons()
