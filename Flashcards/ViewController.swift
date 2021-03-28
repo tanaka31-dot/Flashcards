@@ -32,6 +32,7 @@ class ViewController: UIViewController {
     
     var flashcards = [Flashcard]()
     var currentIndex = 0
+    var correctAnswerButton: UIButton!
     
     override func viewDidLoad() {
              super.viewDidLoad()
@@ -81,9 +82,34 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        wrongTwo.alpha = 0.0
+        wrongTwo.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        wrongOne.alpha = 0.0
+        wrongOne.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        correct.alpha = 0.0
+        correct.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        card.alpha = 0.0
+        card.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
+        
+        UIView.animate(withDuration: 0.6, delay: 0.5, usingSpringWithDamping: 0.5, initialSpringVelocity: 0.5, options: [], animations: {
+            self.card.alpha = 1.0
+            self.correct.alpha = 1.0
+            self.wrongOne.alpha = 1.0
+            self.wrongTwo.alpha = 1.0
+            self.card.transform = CGAffineTransform.identity
+            self.correct.transform = CGAffineTransform.identity
+            self.wrongOne.transform = CGAffineTransform.identity
+            self.wrongTwo.transform = CGAffineTransform.identity
+        })
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         if flashcards.count == 0 {
             performSegue(withIdentifier: "creationSegue", sender: self)
+            updateNextPrevButtons()
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -91,16 +117,18 @@ class ViewController: UIViewController {
     }
     
     func updateNextPrevButtons() {
-        if currentIndex == flashcards.count - 1 {
+        if flashcards.count == 0 || currentIndex == flashcards.count - 1{
             nextButton.isEnabled = false
         } else {
             nextButton.isEnabled = true
+            questionLabel.isHidden = false
         }
         
         if currentIndex < 1 {
             prevButton.isEnabled = false
         } else {
             prevButton.isEnabled = true
+            questionLabel.isHidden = false
         }
     }
     
@@ -146,18 +174,37 @@ class ViewController: UIViewController {
     }
     
     @IBAction func didTapWrongOne(_ sender: Any) {
-        questionLabel.isHidden = false    }
+        if wrongOne == correctAnswerButton{
+            flipFlashcard()
+            print("🎉 correct answer ")
+        } else {
+            questionLabel.isHidden = false
+            //wrongOne.isEnabled = false
+            print(" 😥try again")
+        }
+}
     
     
     @IBAction func didTapCorrect(_ sender: Any) {
-        questionLabel.isHidden = true
-        
-    }
-    
+        if correct == correctAnswerButton{
+            flipFlashcard()
+            print("🎉 correct answer ")
+        } else {
+            questionLabel.isHidden = false
+            //correct.isEnabled = false
+            print("try again 😥")
+        }
+            }
     
     @IBAction func didTapWrongTwo(_ sender: Any) {
-        questionLabel.isHidden = false
-        
+        if wrongTwo == correctAnswerButton{
+            flipFlashcard()
+            print("🎉correct answer ")
+        } else {
+            questionLabel.isHidden = false
+            //correct.isEnabled = false
+            print("😥try again")
+        }
     }
     func updateFlashcard(question: String, answer: String, extraAnswerOne : String, extraAnswerTwo : String, isExisting : Bool){
         
@@ -228,9 +275,15 @@ class ViewController: UIViewController {
             questionLabel.text = currentFlashcard.question
             answerLabel.text = currentFlashcard.answer
             
-            wrongOne.setTitle(currentFlashcard.wrongOne, for: .normal)
-            correct.setTitle(currentFlashcard.answer, for: .normal)
-            wrongTwo.setTitle(currentFlashcard.wrongTwo, for: .normal)
+            let buttons = [correct, wrongOne, wrongTwo].shuffled()
+            let answers = [currentFlashcard.answer, currentFlashcard.wrongOne, currentFlashcard.wrongTwo]
+            for(button, answer) in zip(buttons, answers){
+                button?.setTitle(answer, for: .normal)
+                if answer == currentFlashcard.answer{
+                    correctAnswerButton = button
+                    
+                }
+            }
         }
     }
     
