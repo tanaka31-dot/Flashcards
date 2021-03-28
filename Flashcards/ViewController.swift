@@ -136,8 +136,7 @@ class ViewController: UIViewController {
         flipFlashcard()
             }
     
-    func flipFlashcard(){
-        
+    func flipFlashcard(){        
         UIView.transition(with: card, duration: 0.3, options: .transitionFlipFromRight, animations: {
             if self.questionLabel.isHidden==false {
                 self.questionLabel.isHidden = true
