@@ -72,14 +72,12 @@ Same as lab 2 but with added features to allow user to save flashcards and acces
 ## Lab 4
 
 ### App Description
-`TODO://` Add app description
+Same as previous labs with added app icon, splash screen and some animations, and support for different sized Iphones and Ipads.
 
 ### App Walk-though
 
 <img src="http://g.recordit.co/2MLIjCDY2m.gif" width=200><br>
-<img src="http://g.recordit.co/6MPuKoKeml.gif" width=200><br>
-<img src="http://g.recordit.co/KebNobjLwi.gif" width=200><br>
-<img src="http://g.recordit.co/oKH4ZXy28r.gif" width=200><br>
+<img src="http://g.recordit.co/6MPuKoKeml.gif" width=200><br><img src="http://g.recordit.co/KebNobjLwi.gif" width=200><br><img src="http://g.recordit.co/oKH4ZXy28r.gif" width=200><br>
 
 ## Required
 - [x] User should see the app icon 
