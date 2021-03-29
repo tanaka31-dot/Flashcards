@@ -147,7 +147,7 @@ class ViewController: UIViewController {
     }
     
     func animateCardOut() {
-        UIView.animate(withDuration: 0.1, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)}, completion: {finished in
                         self.updateLabels()
                         self.animateCardIn()})
     }
@@ -155,12 +155,12 @@ class ViewController: UIViewController {
     func animateCardIn() {
         card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)
         
-        UIView.animate(withDuration: 0.2) {self.card.transform = CGAffineTransform.identity}
+        UIView.animate(withDuration: 0.3) {self.card.transform = CGAffineTransform.identity}
         
     }
     
     func animateCardPrev() {
-        UIView.animate(withDuration: 0.1, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: {finished in
+        UIView.animate(withDuration: 0.3, animations: {self.card.transform = CGAffineTransform.identity.translatedBy(x: 300.0, y: 0.0)}, completion: {finished in
                         self.updateLabels()
                         self.animateCardInPrev()})
     }
@@ -168,7 +168,7 @@ class ViewController: UIViewController {
     func animateCardInPrev() {
         card.transform = CGAffineTransform.identity.translatedBy(x: -300.0, y: 0.0)
         
-        UIView.animate(withDuration: 0.2) {self.card.transform = CGAffineTransform.identity}
+        UIView.animate(withDuration: 0.3) {self.card.transform = CGAffineTransform.identity}
         
     }
     

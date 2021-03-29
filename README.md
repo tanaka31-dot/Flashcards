@@ -66,3 +66,30 @@ Same as lab 2 but with added features to allow user to save flashcards and acces
 - [x] User can edit existing flashcard
 - [x] User can store multiple choice questions
 - [x] User gets error message when they try to delete flashcards and they have none left.
+
+
+
+## Lab 4
+
+### App Description
+`TODO://` Add app description
+
+### App Walk-though
+
+<img src="http://g.recordit.co/2MLIjCDY2m.gif" width=200><br>
+<img src="http://g.recordit.co/6MPuKoKeml.gif" width=200><br>
+<img src="http://g.recordit.co/KebNobjLwi.gif" width=200><br>
+<img src="http://g.recordit.co/oKH4ZXy28r.gif" width=200><br>
+
+## Required
+- [x] User should see the app icon 
+- [x] User should see a splash screen
+- [x] User should see an flip animation when revealing the answer
+- [x] User should see a slide animation when going to the next flashcard
+- [x] User should see a slide animation when going to the previous flashcard
+- [x] Push code to GitHub
+
+## Optional
+- [x] User should see a nicer flaschard with rounded corners, shadows, and animating when showing the first time
+- [x] User should see all views properly layout when using the app on a phone of different sizes
+- [x] Correct answer in multiple choice should be random
